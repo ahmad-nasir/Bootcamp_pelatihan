@@ -2,7 +2,55 @@
 <html lang="en">
 <head>
     <title>Bootcamp - Soal 2 </title>
-    
+    <script>
+        function ValidateEmail(inputText)
+        {
+            var mailformat = "@";
+            if(inputText.value.match(mailformat))
+            {
+                document.form1.text1.focus();
+                return true;
+            }
+            else
+            {
+                alert("invalid email");
+                document.form1.text1.focus();
+                return false;
+            }
+        }
+
+        function ValidateUsername(inputText)
+        {
+            var userformat = /^(?=.*[a-z]).{6,15}/;
+            if(inputText.value.match(userformat))
+            {
+                document.form1.text1.focus();
+                return true;
+            }
+            else
+            {
+                alert("invalid username");
+                document.form1.text1.focus();
+                return false;
+            }
+        }
+
+        function ValidatePassword(inputText)
+        {
+            var passformat = /^(?=.*[A-Z])(?=.*\d).{8,30}/;
+            if(inputText.value.match(passformat))
+            {
+                document.form1.text1.focus();
+                return true;
+            }
+            else
+            {
+                alert("Invalid password");
+                document.form1.text1.focus();
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
     <form name="form1" action="#" method="POST">
@@ -13,6 +61,5 @@
         <input type="button" name="submit" value="validasi Email" onclick="ValidateEmail(document.form1.email)" />
         <input type="button" name="submit" value="Validasi Password" onclick="ValidatePassword(document.form1.password)" />
     </form> 
-    <script src="2.js"></script>
 </body>
 </html>
